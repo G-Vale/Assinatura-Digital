@@ -84,7 +84,7 @@
         </nav>
 
         <div class="container-fluid">
-          <h1 class="mt-4">Minha lista de tarefas.</h1>
+          <h1 class="mt-4">Envio do Documento.</h1>
           <div class="row">
             <input
               id="newItem"
@@ -92,7 +92,12 @@
               class="form-control col-5 ml-2"
               type="text"
               placeholder="Nova tarefa"
-            />
+            /> 
+            <form class="form-control col-5 ml-2" method="post">
+      
+              <input type="file" onchange="uploadFile(e)" id="files" name="arquivos[]"  />
+              <progress value="0"></progress>
+            </form>
             <button class="btn btn-primary ml-1" onclick="addTask()">
               Adicionar
             </button>
@@ -125,9 +130,12 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
 
+   
+
     <script src="./js/init.js"></script>
     <script src="./js/auth.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/envio.js"></script>
     <script>
       $("#sidebar-toggle").click(function (e) {
         e.preventDefault()
